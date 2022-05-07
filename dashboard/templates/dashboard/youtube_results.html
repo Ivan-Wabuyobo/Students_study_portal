@@ -1,0 +1,32 @@
+{% extends 'dashboard/base.html' %}  
+{% load static %} 
+{% block content %}
+<div class="container" style="padding-top: 200px">
+<a href="#" target="_blank">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-5">
+            <img class="img-fluid" src=`{{ results.thumbnails }}` alt="" />
+          </div>
+          <div class="col-md-7">
+            <h3 class="p-0 m-0"></h3>
+            <b>
+              <u>
+                <h5 class="p-0 m-0">{{results.title}}</h5>
+              </u>
+            </b>
+           <b>
+              <h6 class="ml-0 mt-3">{{results.duration}}</h6>
+              <h6 class="ml-0 mt-1">{{results.views}}</h6>
+              <h6 class="ml-0 mt-1">{{results.publish_time}}</h6>
+            </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <br />
+</section>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block content %}
+<section class='text-center container' style="margin-top: 150px">
+    <h2>Student Dictionary</h2>
+    <h4>Search here</h4>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="search" id="search" style="border-radius: 5px; display: block; margin-left: 41%">
+        <input class="btn btn-danger" type="submit" value="Submit" style = "margin-top:10px">
+    </form><br>
+    <div class="content-section p-0 mt-5">
+
+        <div class="custom-header">
+            <h2>input</h2>
+            <h6>{{search}}</h6>
+            <audio id="player" src=""></audio>
+            <div>
+                <i class='fa fa-volume-up fa-2x'></i>
+            </div>
+        </div>
+
+        <hr class="p-0 m-0">
+        
+            {% for item in meaning.Noun %}
+            <p class="float-left">
+
+                <h4>Definition:{{forloop.counter}} {{item}}</h4>
+            </p>
+            {% endfor %}
+        
+        <hr>
+
+    </div>
+</section>
+{% endblock content %}
